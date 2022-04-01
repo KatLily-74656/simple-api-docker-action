@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  api_request_job:
+    runs-on: ubuntu-latest
+    name: A job to make a post request to a simple api
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Simple API Action Step
+        uses: ./ # Uses an action in the root directory
+        id: api
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.api.outputs.post_result }}"
