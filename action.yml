@@ -14,5 +14,8 @@ runs:
   steps:
     - uses: actions/checkout@v2
     - run: docker build -t simple-api .
+      shell: bash
     - run: docker run -p 3000:3000 simple-api
+      shell: bash
     - run: curl -X POST -H "Content-Type: application/json" -d '{ "name" : "test" }' http://localhost:3000/handle
+      shell: bash
