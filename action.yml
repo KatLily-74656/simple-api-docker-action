@@ -1,0 +1,18 @@
+# action.yml
+name: 'Simple API'
+description: 'Simple API to make a post request'
+inputs:
+  post-body:  # id of input
+    description: 'json'
+    required: true
+    default: '{ "name" : "test" }'
+outputs:
+  post-result: # id of output
+    description: 'result of the post request'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v2
+    - run: docker build -t simple-api .
+    - run: docker run -p 3000:3000 simple-api
+    - run: curl -X POST -H "Content-Type: application/json" -d '{ "name" : "test" }' http://localhost:3000/handle
