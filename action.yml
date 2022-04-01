@@ -17,5 +17,3 @@ runs:
       shell: bash
     - run: docker run -p 3000:3000 simple-api
       shell: bash
-    - run: echo test
-      shell: bash
