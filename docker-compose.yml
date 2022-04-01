@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  api:
+    build: .
+    image: simple-api:latest
+    ports:
+      - "3000:3000"
+
+  curl: 
+    image: curlimages/curl
+    depends_on:
+      - api
+    command: >-
+      curl
+      -X POST
+      -d '{ "name" : "test" }'
+      -H "Content-Type: application/json"
+      http://api:3000/handle
