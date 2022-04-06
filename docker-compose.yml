@@ -10,11 +10,10 @@ services:
     image: curlimages/curl
     depends_on:
       - api
-    environment:
-      POST_BODY: '{ "please" : "work" }'
     command: >-
+      bash -c "echo $POST_BODY"
       curl
       -X POST
-      -d "$POST_BODY"
+      -d '{ "name" : "test" }'
       -H "Content-Type: application/json"
       http://api:3000/handle
