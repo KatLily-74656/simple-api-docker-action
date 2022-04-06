@@ -13,9 +13,8 @@ services:
     environment:
       - POST_BODY=${POST_BODY}
     command: >-
-      bash -c "echo $POST_BODY"
       curl
       -X POST
-      -d '{ "name" : "test" }'
+      -d '$POST_BODY'
       -H "Content-Type: application/json"
       http://api:3000/handle
