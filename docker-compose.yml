@@ -29,4 +29,5 @@ services:
       - api
     command: >
       bash -c "echo '${POST_BODY}'
+      && apt-get update; apt-get install curl
       && curl -X POST -d "$POST_BODY" -H "Content-Type: application/json" http://api:3000/handle)"
