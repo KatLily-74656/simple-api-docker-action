@@ -17,8 +17,9 @@ services:
     depends_on:
       - api
     command: >-
-      curl
+      test=$(curl
       -X POST
       -d "$POST_BODY"
       -H "Content-Type: application/json"
-      http://api:3000/handle
+      http://api:3000/handle)
+      echo $test
