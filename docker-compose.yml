@@ -10,6 +10,8 @@ services:
     image: curlimages/curl
     depends_on:
       - api
+    environment:
+      - POST_BODY=${POST_BODY}
     command: >-
       bash -c "echo $POST_BODY"
       curl
