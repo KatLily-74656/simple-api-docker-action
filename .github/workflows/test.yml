@@ -13,7 +13,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: api
         with:
-          post-body: { "name" : "Anthony" }
+          post-body: '{ "name" : "Anthony" }'
       # Use the output from the `hello` step
       - name: Get the output
         run: echo "The time was ${{ steps.api.outputs.post_result }}"
