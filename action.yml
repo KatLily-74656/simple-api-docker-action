@@ -13,5 +13,5 @@ runs:
   using: 'composite'
   steps:
     - uses: actions/checkout@v2
-    - run: docker-compose up  --abort-on-container-exit -e POST_BODY=INPUT_POST_BODY
+    - run: POST_BODY=INPUT_POST_BODY docker-compose up  --abort-on-container-exit
       shell: bash
