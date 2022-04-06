@@ -6,14 +6,6 @@ services:
     ports:
       - "3000:3000"
 
-  sh:
-    entrypoint: /bin/sh
-    command: -c "echo ${POST_BODY}"
-    image: ubuntu
-    tty: true
-    depends_on: 
-      - curl
-
   curl: 
     image: curlimages/curl
     depends_on:
