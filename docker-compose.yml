@@ -10,6 +10,8 @@ services:
     image: curlimages/curl
     depends_on:
       - api
+    environment:
+      POST_BODY: '{ "please" : "work" }'
     command: >-
       curl
       -X POST
