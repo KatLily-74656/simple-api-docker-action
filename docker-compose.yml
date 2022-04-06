@@ -13,6 +13,6 @@ services:
     command: >-
       curl
       -X POST
-      -d '$POST_BODY'
+      -d "$POST_BODY"
       -H "Content-Type: application/json"
       http://api:3000/handle
