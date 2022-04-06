@@ -8,11 +8,13 @@ services:
 
   curl: 
     image: curlimages/curl
+    args:
+      - POST_BODY: '{ "name" : "test" }'
     depends_on:
       - api
     command: >-
       curl
       -X POST
-      -d '{ "name" : "test" }'
+      -d ${ POST_BODY }
       -H "Content-Type: application/json"
       http://api:3000/handle
