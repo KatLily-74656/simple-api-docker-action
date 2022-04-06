@@ -16,5 +16,5 @@ runs:
     - run: |
         POST_BODY='${{inputs.post-body}}' docker-compose up  --abort-on-container-exit
         output=$(docker-compose logs --no-color | tail -1)
-        echo $output | cut -d "|" -f1
+        echo $output | cut -d "|" -f2
       shell: bash
