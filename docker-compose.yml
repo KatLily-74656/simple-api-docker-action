@@ -8,8 +8,6 @@ services:
 
   curl: 
     image: curlimages/curl
-    args:
-      - POST_BODY: '{ "name" : "test" }'
     depends_on:
       - api
     command: >-
