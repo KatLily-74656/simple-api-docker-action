@@ -12,14 +12,21 @@ services:
   #  image: ubuntu
   #  tty: true
 
-  curl: 
-    image: curlimages/curl
+  #curl: 
+  #  image: curlimages/curl
+  #  depends_on:
+  #    - api
+  #  command: >-
+  #    curl
+  #    -X POST
+  #    -d "$POST_BODY"
+  #    -H "Content-Type: application/json"
+  #    http://api:3000/handle)
+
+  curl:
+    image: ubuntu
     depends_on:
       - api
-    command: >-
-      test=$(curl
-      -X POST
-      -d "$POST_BODY"
-      -H "Content-Type: application/json"
-      http://api:3000/handle)
-      echo $test
+    command: >
+      bash -c "echo '${POST_BODY}'
+      && curl -X POST -d "$POST_BODY" -H "Content-Type: application/json" http://api:3000/handle)"
