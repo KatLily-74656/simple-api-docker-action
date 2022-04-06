@@ -11,13 +11,13 @@ services:
     command: -c "echo ${POST_BODY}"
     image: ubuntu
     tty: true
+    depends_on: 
+      - curl
 
   curl: 
     image: curlimages/curl
     depends_on:
       - api
-    environment:
-      - POST_BODY=${POST_BODY}
     command: >-
       curl
       -X POST
