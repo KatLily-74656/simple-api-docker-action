@@ -6,11 +6,11 @@ services:
     ports:
       - "3000:3000"
 
-  sh:
-    entrypoint: /bin/sh
-    command: -c "echo '${POST_BODY}'"
-    image: ubuntu
-    tty: true
+  #sh:
+  #  entrypoint: /bin/sh
+  #  command: -c "echo '${POST_BODY}'"
+  #  image: ubuntu
+  #  tty: true
 
   curl: 
     image: curlimages/curl
