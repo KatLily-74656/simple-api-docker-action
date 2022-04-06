@@ -30,5 +30,5 @@ services:
     command: >
       bash -c "echo '${POST_BODY}'
       && apt-get update; apt-get install -y curl
-      && result=`curl -X POST -d '$POST_BODY' -H 'Content-Type: application/json' http://api:3000/handle`
+      && result=`curl -s -X POST -d '$POST_BODY' -H 'Content-Type: application/json' http://api:3000/handle`
       && echo `$result`"
