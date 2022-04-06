@@ -6,10 +6,6 @@ services:
     ports:
       - "3000:3000"
 
-  sh:
-    command: '/bin/sh -c "echo $$POST_BODY"'
-
-
   curl: 
     image: curlimages/curl
     depends_on:
