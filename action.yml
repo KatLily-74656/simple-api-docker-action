@@ -5,7 +5,7 @@ inputs:
   post-body:  # id of input
     description: 'json'
     required: true
-    default: '{ "name" : "test" }'
+    default: '{"name":"test"}'
 outputs:
   post-result: # id of output
     description: 'result of the post request'
