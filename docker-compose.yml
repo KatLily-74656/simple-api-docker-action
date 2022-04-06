@@ -8,7 +8,7 @@ services:
 
   sh:
     entrypoint: /bin/sh
-    command: -c "echo -e '$POST_BODY'"
+    command: -c "echo '${POST_BODY}'"
     image: ubuntu
     tty: true
 
