@@ -18,6 +18,5 @@ runs:
         output=$(docker-compose logs --no-color | tail -1)
         result=$(echo $output | cut -c10- | rev | rev)
         echo $result
-        echo ::set-output name=post-result::"$result"
-        $outputs.post_result = $result
+        echo `::set-output name=post-result::"$result"`
       shell: bash
