@@ -19,4 +19,4 @@ runs:
         result=$(echo $output | cut -c10- | rev | rev)
         echo $result
         echo `::set-output name=post-result::"$result"`
-      shell: bash
+      shell: sh
